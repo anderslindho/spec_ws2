@@ -1,2 +1,24 @@
-modules: dict
-base_req_combos: list
+metadata:
+  specification:
+    major: 1
+    minor: 0
+    patch: 0
+  
+modules:
+  - name: asyn  # what name: module-name, repo-name, repo-path?
+    # this approach with 'name' requires additional tool;
+    # - might be problematic if e.g. domain changes, or git manager changes
+    tags:
+      - base-require/module-hash-timestamp-1
+      - base-require/module-hash-timestamp-2
+  - git-url: git@gitlab.esss.lu.se:e3/common/e3-asyn.git  # backwards-compatability broken if repo moved
+    tag: base-require/module-hash-timestamp
+
+
+
+# require 3.4.0 -> 3.4.1
+# transfer all versions, all build numbers
+
+# 7.0.4-3.3.0 -> 7.0.5-3.4.0
+# transfer select modules and versions, reset build numbers
+
